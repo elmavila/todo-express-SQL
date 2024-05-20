@@ -13,7 +13,7 @@ function UserTodos() {
     }, [userId])
 
     function fetchData() {
-        fetch(`http://localhost:3030/users/${userId}/todos`)
+        fetch(`/users/${userId}/todos`)
             .then(response => {
                 // Kontrollera om anropet var framgångsrikt
                 if (!response.ok) {
@@ -26,7 +26,7 @@ function UserTodos() {
                 // Uppdatera tillståndsvariabeln med användarens todos
                 setTodos(todosData);
 
-                fetch(`http://localhost:3030/users/${userId}`)
+                fetch(`/users/${userId}`)
                     .then(response => response.json())
                     .then(userData => setSelectedUserName(userData.name))
                     .catch(error => console.error('Error fetching user data:', error));

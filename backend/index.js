@@ -1,13 +1,14 @@
 const cors = require('cors'),
   express = require('express'),
   sqlite = require('sqlite'),
-  sqlite3 = require('sqlite3')
+  sqlite3 = require('sqlite3'),
+  path = require("path")
 
 const app = express(),
   port = process.env.PORT || 3030
 
 //konfigurera express
-app.use(express.json())
+app.use(express.static(path.join(path.resolve(), 'dist')))
 
 let database
 

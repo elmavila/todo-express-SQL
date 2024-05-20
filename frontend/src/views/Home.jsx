@@ -13,7 +13,7 @@ function Home() {
 
   // Funktion för att hämta data från API:et
   function fetchData() {
-    fetch('http://localhost:3030/users')
+    fetch('/users')
       .then((response) => {
         // Kontrollerar om anropet var framgångsrikt
         if (!response.ok) {
